@@ -12,7 +12,7 @@ module.exports = {
         next(error);
     },
     internal: (err, req, res, next) => {
-        logger.error(`${err} : Not Found`);
+        logger.error(`${err.message} : Not Found`);
         const response = err.code ? err : {
             code: codes.INTERNAL_SERVER_ERROR,
             message: err.message,

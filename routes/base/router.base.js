@@ -4,6 +4,7 @@ class BaseRouter {
     constructor(router, CRUDService) {
         this.router = router;
         this.CRUDService = CRUDService;
+        
         this.router.get(routes.getBy, this.get.bind(this));
         this.router.post(routes.defaultRouter, this.post.bind(this));
         this.router.delete(routes.getBy, this.delete.bind(this));
