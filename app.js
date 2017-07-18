@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const errorService = require('./services/error.service');
 const routes = require('./constants/routes');
 const index = require('./routes/index.route');
+const user = require('./routes/user.route');
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(morgan('dev'));
 app.use(bodyParser());
 
 app.use(routes.defaultRouter, index);
+app.use(routes.userRouter, user);
 app.use(errorService.notFound);
 app.use(errorService.internal);
 
