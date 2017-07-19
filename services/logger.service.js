@@ -1,4 +1,6 @@
-const logger = require('winston');
+const bunyan = require('bunyan');
+
+const logger = bunyan.createLogger({ name: 'logger' });
 
 class Logger {
     constructor(log) {
