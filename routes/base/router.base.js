@@ -1,30 +1,47 @@
 const routes = require('../../constants/routes');
 
 class BaseRouter {
-    constructor(router, CRUDService) {
+    constructor(router, dataService) {
         this.router = router;
-        this.CRUDService = CRUDService;
-        
-        this.router.get(routes.getBy, this.get.bind(this));
+        this.dataService = dataService;
+        this.router.get(routes.defaultRouter, this.get.bind(this));
         this.router.post(routes.defaultRouter, this.post.bind(this));
         this.router.delete(routes.getBy, this.delete.bind(this));
         this.router.put(routes.getBy, this.put.bind(this));
     }
 
     get(req, res) {
-        res.json(this.CRUDService.read(req.params.id));
+        this.dataService.find()
+            .then((data) => {
+                res.json(data);
+            })
+            .catch((err) => {
+                res.json(err);
+            });
     }
 
     post(req, res) {
-        res.json(this.CRUDService.create(req.body));
+        this.dataService.create(req.body)
+            .then((data) => {
+                res.json(data);
+            })
+            .catch((err) => {
+                res.json(err);
+            });
     }
 
     put(req, res) {
-        res.json(this.CRUDService.update(req.body));
+        this.dataService.update(req.body)
+            .then((data) => {
+                res.json(data);
+            });
     }
 
     delete(req, res) {
-        res.json(this.CRUDService.delete(req.params.id));
+        this.dataService.remove(req.params.id)
+            .then((data) => {
+                res.json(data);
+            });
     }
 }
 

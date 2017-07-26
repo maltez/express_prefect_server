@@ -1,5 +1,4 @@
 const router = require('express').Router();
-
 const routes = require('../constants/routes');
 const codes = require('http-status-codes');
 

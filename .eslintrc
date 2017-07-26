@@ -5,6 +5,7 @@
     "extends": "airbnb-base",
     "rules": {
         "indent": [2, 4],
-        "no-unneeded-ternary":"off"
+        "no-unneeded-ternary":"off",
+        "no-underscore-dangle":"off"
     }
 }
