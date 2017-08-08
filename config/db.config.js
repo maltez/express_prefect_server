@@ -7,6 +7,5 @@ module.exports = {
     rdbName: 'test1',
     schemaNames: {
         superHero: 'SuperHero',
-        emploee: 'Emploee'
     },
 };

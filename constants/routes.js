@@ -3,5 +3,4 @@ module.exports = {
     getBy: '/:id',
     userRouter: '/user',
     hero: '/hero',
-    emploee: '/emploee'
 };
