@@ -8,7 +8,7 @@
     "lint": "node ./node_modules/eslint/bin/eslint ./*.js ./**/*.js",
     "lint:fix": "node ./node_modules/eslint/bin/eslint --fix ./*.js ./**/*.js",
     "start": "./node_modules/pm2/bin/pm2 start ecosystem.config.js --no-daemon",
-    "test": "node node_modules/jest/bin/jest test --watch"
+    "test": "node node_modules/jest/bin/jest test --watch --coverage"
   },
   "author": "",
   "license": "ISC",
